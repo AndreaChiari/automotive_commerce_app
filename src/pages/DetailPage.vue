@@ -41,6 +41,7 @@ export default {
 <style lang="scss" scoped>
 
 .detail-container{
+    margin-top: 100px;
     position: relative;
     min-height: calc(100vh - 260px);
    

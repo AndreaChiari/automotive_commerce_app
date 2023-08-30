@@ -14,7 +14,7 @@ export default {
 
 </script>
 <template>
-    <div class="product-card p-2 h-full col-2">
+    <div class="product-card p-2 h-full col-lg-2 col-md-4 col-sm-12">
         <router-link :to="{name: 'DetailPage', params: { id: id }}">
             <h4>MAKE : <span class="text-white">{{ make }}</span></h4>
             <h4>MODEL : <span class="text-white">{{ model }}</span></h4>

@@ -12,6 +12,12 @@
 
 <style lang="scss" scoped>
 header{
+    background-color: white;
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    right: 0px;
     div{
         background-color: #F90032;
         h4{

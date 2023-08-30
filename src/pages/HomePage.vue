@@ -17,7 +17,7 @@ export default {
     filteredCars() {
         // setup a control to make sure filter is apllied only when clicking the button
       if (this.controlFilter) {
-        const filter = this.termSearch.toLowerCase();
+        const filter = this.termSearch.toLowerCase().trim();
         return this.cars.filter(car => {
           return (
             car.make.toLowerCase().includes(filter) ||
@@ -50,7 +50,7 @@ export default {
 <template>
     <main class="container mx-auto row flex flex-wrap justify-center items-center">
         <div class="flex justify-center filter-container">
-            <input v-model="termSearch" @input="inputChanged"  type="text" placeholder="Search for make or model" class="mr-4">
+            <input v-model="termSearch" @input="inputChanged" @keydown.enter="submitFilter" type="text" placeholder="Search for make or model" class="mr-4">
             <button @click="submitFilter"> GO </button>
         </div>     
         <ProductCard v-for="car in filteredCars" :key="car.id" :make="car.make" :model="car.model" :price="car.price" :id="car.id"></ProductCard>
@@ -59,11 +59,18 @@ export default {
 
 <style lang="scss" scoped>
 main{
+    padding-top: 150px;
+    position: relative;
     gap: 25px;
     overflow-y: hidden;
     min-height: calc(100vh - 260px);
     .filter-container{
-        padding: 0;
+        position: fixed;
+        top: 65px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 0px 10px 0px;
+        background-color: white;
     }
     input{
        padding: 0 3px;
