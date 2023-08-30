@@ -24,3 +24,10 @@ export default {
     </main>
 </template>
 
+<style lang="scss" scoped>
+main{
+    gap: 25px;
+    overflow-y: hidden;
+    min-height: calc(100vh - 260px)
+}
+</style>
