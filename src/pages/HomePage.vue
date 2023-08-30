@@ -8,19 +8,25 @@ export default {
     components: {ProductCard},
   data() {
     return {
-      data: cars
+      cars: [] 
     };
+  },
+  created() {
+    // Assegno i dati importati all'array cars
+    this.cars = cars;
   }
 };
+
 </script>
 <template>
-    <main>
-        <ProductCard></ProductCard>
+    <main class="container mx-auto row flex flex-wrap justify-center items-center">
+        <ProductCard v-for="car in cars" :key="car.id" :make="car.make" :model="car.model" :price="car.price"></ProductCard>
     </main>
 </template>
 
 <style lang="scss" scoped>
 main{
+    gap: 25px;
     overflow-y: hidden;
     min-height: calc(100vh - 275px)
 }
