@@ -8,11 +8,30 @@ export default {
     components: {ProductCard},
   data() {
     return {
-      cars: [] 
+        termSearch:'', 
+      cars: [],
     };
+    
+  },
+  
+  computed:{
+    FilterCars(){
+        const filter = this.termSearch.toLowerCase();
+        return this.cars.filter(car =>{
+            return(            
+                car.make.toLowerCase().includes(filter) ||
+                car.model.toLowerCase().includes(filter)
+            );
+        });
+    }
+  },
+  methods:{
+    submitFilter(){
+
+    }
   },
   created() {
-    // Assegno i dati importati all'array cars
+    // assign imported data to cars array
     this.cars = cars;
   }
 };
@@ -21,10 +40,10 @@ export default {
 <template>
     <main class="container mx-auto row flex flex-wrap justify-center items-center">
         <div class="flex justify-center filter-container">
-            <input id="filterinput" type="text" placeholder="Search for a car" class="mr-4">
-            <button id="filterbutton"> GO</button>
+            <input v-model="termSearch" type="text" placeholder="Search for make or model" class="mr-4">
+            <button @click="submitFilter"> GO </button>
         </div>     
-        <ProductCard v-for="car in cars" :key="car.id" :make="car.make" :model="car.model" :price="car.price" :id="car.id"></ProductCard>
+        <ProductCard v-for="car in FilterCars" :key="car.id" :make="car.make" :model="car.model" :price="car.price" :id="car.id"></ProductCard>
     </main>
 </template>
 
@@ -37,7 +56,7 @@ main{
         padding: 0;
     }
     input{
-        padding-left: 2px;
+       padding: 0 3px;
         border: 1px solid #F90032;
     }
     button{
