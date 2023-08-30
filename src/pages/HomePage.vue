@@ -50,7 +50,7 @@ export default {
 <template>
     <main class="container mx-auto row flex flex-wrap justify-center items-center">
         <div class="flex justify-center filter-container">
-            <input v-model="termSearch" @input="inputChanged" @keydown.enter="submitFilter" type="text" placeholder="Search for make or model" class="mr-4">
+            <input autofocus v-model="termSearch" @input="inputChanged" @keydown.enter="submitFilter" type="text" placeholder="Search for make or model" class="mr-4">
             <button @click="submitFilter"> GO </button>
         </div>     
         <ProductCard v-for="car in filteredCars" :key="car.id" :make="car.make" :model="car.model" :price="car.price" :id="car.id"></ProductCard>
@@ -58,6 +58,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+button:focus{
+    outline-color: transparent;
+}
 main{
     padding-top: 150px;
     position: relative;
@@ -74,7 +77,7 @@ main{
     }
     input{
        padding: 0 3px;
-        border: 1px solid #F90032;
+       border: 1px solid #F90032;
     }
     button{
       color: white;

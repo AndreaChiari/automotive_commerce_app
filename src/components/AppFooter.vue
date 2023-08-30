@@ -23,7 +23,7 @@ footer{
     color: white;
     background-color: #141414; 
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     bottom: 0px;
     left: 0px;
     right: 0px;   

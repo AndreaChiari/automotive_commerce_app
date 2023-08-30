@@ -47,12 +47,11 @@ export default {
    
     .info-detail-container{
         width: 50%;
-        background-color:#9A99A4 ;
+        background-color:#03001B ;
         border-radius: 5px;
-       color: white;
+        color: white;
     }
     img{
-        opacity: 0.4;
         position: absolute;
         left: 926px;
         top: 80px;
