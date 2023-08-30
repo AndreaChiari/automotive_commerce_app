@@ -6,7 +6,8 @@ export default {
     props:{
         make: String,
         model: String,
-        price: Number
+        price: Number,
+        id: Number
     }
   
     }
@@ -14,9 +15,11 @@ export default {
 </script>
 <template>
     <div class="product-card p-2 h-full col-2">
-        <h4>MAKE : <span class="text-white">{{ make }}</span></h4>
-        <h4>MODEL : <span class="text-white">{{ model }}</span></h4>
-        <h4>PRICE : <span class="text-white">{{ price }}</span></h4>
+        <router-link :to="{name: 'DetailPage', params: { id: id }}">
+            <h4>MAKE : <span class="text-white">{{ make }}</span></h4>
+            <h4>MODEL : <span class="text-white">{{ model }}</span></h4>
+            <h4>PRICE : <span class="text-white">{{ price }}</span></h4>
+        </router-link>
     </div>
 </template>
 
