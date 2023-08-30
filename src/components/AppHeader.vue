@@ -1,6 +1,6 @@
 <script></script>
 <template>
-   <header class="flex justify-between items-center" >
+   <header class="flex justify-between items-center container mx-auto" >
         <img class="h-full w-48" src="../assets/img/MOTORK-logo-2048x463.png" alt="MOTORK-logo-2048x463.png">
         <div class="p-1">
             <h4 class="text-center font-sans font-semibold">MOTORK <br> CONCESSIONARY</h4>

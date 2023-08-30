@@ -8,10 +8,8 @@ export default {
   components: { AppHeader, HomePage, AppFooter },
 };
 </script>
-<template>
-  <div class="container mx-auto">
-    <AppHeader></AppHeader>
-    <RouterView></RouterView>
-    <AppFooter></AppFooter>
-  </div>
+<template>  
+  <AppHeader></AppHeader>
+  <RouterView></RouterView>
+  <AppFooter></AppFooter>
 </template>
