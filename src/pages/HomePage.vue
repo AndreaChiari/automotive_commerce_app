@@ -4,46 +4,56 @@ import { cars } from '../assets/data.js';
 import ProductCard from '../components/ProductCard.vue'
 
 export default {
-    name:'HomePage',
-    components: {ProductCard},
+  name: 'HomePage',
+  components: { ProductCard },
   data() {
     return {
-        termSearch:'', 
+      termSearch: '', 
       cars: [],
+      controlFilter: false
     };
-    
   },
-  
-  computed:{
-    FilterCars(){
+  computed: {
+    filteredCars() {
+        // setup a control to make sure filter is apllied only when clicking the button
+      if (this.controlFilter) {
         const filter = this.termSearch.toLowerCase();
-        return this.cars.filter(car =>{
-            return(            
-                car.make.toLowerCase().includes(filter) ||
-                car.model.toLowerCase().includes(filter)
-            );
+        return this.cars.filter(car => {
+          return (
+            car.make.toLowerCase().includes(filter) ||
+            car.model.toLowerCase().includes(filter)
+          );
         });
+      } else {
+        return this.cars; // Show every cars if filter isn't applied
+      }
     }
   },
-  methods:{
-    submitFilter(){
+  methods: {
+    submitFilter() {
+        this.controlFilter = true; 
+    },
 
+    // set up a function to empty the input field and set up the variable controlfilter to false, in this way we can properly filter the result by only clicking the go button
+    inputChanged() {
+      if (this.termSearch.trim() === '') {
+        this.controlFilter = false;
+      }
     }
   },
   created() {
-    // assign imported data to cars array
     this.cars = cars;
-  }
+  },
 };
 
 </script>
 <template>
     <main class="container mx-auto row flex flex-wrap justify-center items-center">
         <div class="flex justify-center filter-container">
-            <input v-model="termSearch" type="text" placeholder="Search for make or model" class="mr-4">
+            <input v-model="termSearch" @input="inputChanged"  type="text" placeholder="Search for make or model" class="mr-4">
             <button @click="submitFilter"> GO </button>
         </div>     
-        <ProductCard v-for="car in FilterCars" :key="car.id" :make="car.make" :model="car.model" :price="car.price" :id="car.id"></ProductCard>
+        <ProductCard v-for="car in filteredCars" :key="car.id" :make="car.make" :model="car.model" :price="car.price" :id="car.id"></ProductCard>
     </main>
 </template>
 
