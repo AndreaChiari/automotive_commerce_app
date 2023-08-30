@@ -9,7 +9,9 @@ export default {
 };
 </script>
 <template>
-  <AppHeader></AppHeader>
-  <RouterView></RouterView>
-  <AppFooter></AppFooter>
+  <div class="container mx-auto">
+    <AppHeader></AppHeader>
+    <RouterView></RouterView>
+    <AppFooter></AppFooter>
+  </div>
 </template>
