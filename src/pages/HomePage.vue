@@ -68,12 +68,13 @@ main{
     overflow-y: hidden;
     min-height: calc(100vh - 260px);
     .filter-container{
-        position: fixed;
-        top: 65px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 10px 0px 10px 0px;
-        background-color: white;
+      position: fixed;
+      top: 65px;
+      left: 50%;
+      z-index: 6;
+      transform: translateX(-50%);
+      padding: 10px 0px 10px 0px;
+      background-color: white;
     }
     input{
        padding: 0 3px;

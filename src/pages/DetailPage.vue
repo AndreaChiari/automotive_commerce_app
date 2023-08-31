@@ -60,4 +60,40 @@ export default {
         color:#F90032;
     }
 }
+// responsive section
+
+@media screen and (max-width: 1440px){
+
+img{
+    left: 743px!important;
+    top: 20px!important;
+}
+
+}
+
+@media screen and (max-width: 1024px){
+
+img{
+    left: 488px!important;
+    top: 34px!important;
+}
+    
+h1{
+    margin-bottom: 50px;
+}
+
+}
+
+@media screen and (max-width: 426px){
+h1{
+    margin-bottom: 155px!important;
+}
+img{
+    display: none;
+}
+
+.info-detail-container{
+    width: 76%!important;
+}
+}
 </style>

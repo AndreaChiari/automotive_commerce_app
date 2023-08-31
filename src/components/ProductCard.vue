@@ -32,6 +32,7 @@ a{
     right: 0;
     left: 0;
     padding: 10px;
+    z-index: 4;
 }
 .logo-product{
     opacity: 0;
@@ -56,4 +57,21 @@ a{
         color:#F90032;
     }
 }
+
+// responsive section
+
+@media screen and (max-width: 1440px){
+.logo-product{
+    left:118px ;
+}}
+
+@media screen and (max-width: 1024px){
+.logo-product{
+    left:88px ;
+}}
+
+@media screen and (max-width: 426px){
+.logo-product{
+    left:247px;
+}}
 </style>
