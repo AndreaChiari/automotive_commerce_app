@@ -56,6 +56,11 @@ a{
     h4{
         color:#F90032;
     }
+
+}
+.product-card:hover{
+    border: 3px solid #F90032;
+    transition: 0.1s ease-in-out;
 }
 
 // responsive section
@@ -69,6 +74,14 @@ a{
 .logo-product{
     left:88px ;
 }}
+
+@media screen and (max-width: 768px){
+
+.logo-product{
+    left: 135px;
+}
+
+}
 
 @media screen and (max-width: 426px){
 .logo-product{
