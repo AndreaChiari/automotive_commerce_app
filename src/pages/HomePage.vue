@@ -25,7 +25,9 @@ export default {
           );
         });
       } else {
-        return this.cars; // Show every cars if filter isn't applied
+        
+         // Show every cars if filter isn't applied
+        return this.cars;
       }
     }
   },
